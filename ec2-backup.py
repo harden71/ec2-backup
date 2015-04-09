@@ -8,7 +8,9 @@ import boto.ec2
 import optparse
 
 # Define command line options
-usage = "Usage: %prog [-h] [-m method] [-v volume-id] dir"
+def usage():
+  print " Usage: ec2-backup [-h] [-m method] [-v volume-id] dir"
+  
 description = "ec2-backup -- backup a directory into Elastic Block Storage (EBS)"
 parser = optparse.OptionParser(usage=usage, description=description)
 parser.add_option('-m', '--method', dest="method", default="dd", choices=['dd', 'rsync'])
