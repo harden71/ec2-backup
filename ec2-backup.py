@@ -7,6 +7,16 @@ import sys
 import boto.ec2
 import optparse
 
+#Function to get the local volume size (Found on http://stackoverflow.com/questions/1392413/calculating-a-directory-size-using-python)
+
+def get_local_size(start_path = '.'):
+  total_size = 0
+  for dirpath, dirnames, filenames in os.walk(start_path):
+    for f in filenames:
+      fp = os.path.join(dirpath, f)
+      total_size += os.path.getsize(fp)
+    return total_size
+
 # Define command line options
 usage = "Usage: %prog [-h] [-m method] [-v volume-id] dir"
 description = "ec2-backup -- backup a directory into Elastic Block Storage (EBS)"
