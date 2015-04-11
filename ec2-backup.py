@@ -60,7 +60,14 @@ def estimate_size(path):
   # proc.stdout is a file descriptor and requires readline
   # [:-1] returns everything but the last character 
   return proc.stdout.readline().split()[0][:-1]
+#attach Volume (globals need to be declared at the beginning)
 
+def attach():
+   
+    command="aws ec2 attach-volume --volume-id %s --instance-id %s --device %s"%(volumeid,instanceid,mount_location)
+    out = commands.getstatusoutput(command)
+    err_check(out)
+    
 def Main():
 
   # 
