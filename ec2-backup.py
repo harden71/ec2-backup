@@ -60,6 +60,14 @@ def estimate_size(path):
   # proc.stdout is a file descriptor and requires readline
   # [:-1] returns everything but the last character 
   return proc.stdout.readline().split()[0][:-1]
+    
+    #print "size in GB (rounded up):", estimate_size(sys.argv[1])
+def GB(size):
+	GB_size = (size/(1024*1024*1024))+1
+	return GB_size
+#create volume
+ if volume is None:
+        volume = conn.create_volume(GB_size, region)
 
 def Main():
 
