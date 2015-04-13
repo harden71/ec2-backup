@@ -29,6 +29,7 @@ mountpoint = '/backup'   # directory only required for rsync
 # http://cloud-images.ubuntu.com/locator/ec2/ 
 ami = 'ami-00615068'
 ssh_user = 'ubuntu'
+#hello
 
 def exec_remote(login, remote_command):
   # login contains 'ssh_user@ec2.host.amazon.com'
