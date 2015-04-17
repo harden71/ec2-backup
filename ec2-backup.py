@@ -199,7 +199,11 @@ def Main():
 
   #
   # SSH/TAR/Stuff
-  #
+  
+  #dd method commended out
+  #if (method == 'dd'):
+  #	exec_remote("tar -cvf -{1} | ssh #here philip goes the key# {0}\"dd of={2}\".format(login, backupdir, str(attach_location)))
+  #!!!we also have to declare the attach_location will it be /dev/xvdf?
   # public_dns_name is unicode format
   fqdn = str(instance.public_dns_name)
   login = ssh_user + '@' + fqdn 
